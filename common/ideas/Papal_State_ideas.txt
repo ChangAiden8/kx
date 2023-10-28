@@ -14,7 +14,9 @@ ideas = {
 				party_popularity_stability_factor = 0.10
 				drift_defence_factor = -0.25
 				social_democrat_drift = 0.01
+				social_liberal_drift = 0.01
 				social_conservative_drift = 0.01
+				authoritarian_democrat_drift = 0.01
 				national_populist_drift = 0.01
 			}
 			picture = PAP_future_past_idea
@@ -48,6 +50,11 @@ ideas = {
 			picture = PAP_holy_see
 		}
 
+		PAP_roman_state = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_roman_state"}
+			picture = PAP_roman_state
+		}
+
 		PAP_black_monday_2 = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_black_monday_2"}
 			allowed = { always = no }
@@ -72,6 +79,31 @@ ideas = {
 			picture = great_depression
 		}
 
+		PAP_romanopopulist_theory = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_romanopopulist_theory"}
+			picture = VNC_auth_dem_victory_idea
+			allowed = { always = no }
+            modifier = {
+				authoritarian_democrat_drift = 0.02
+				stability_factor = 0.05
+				industrial_capacity_factory = 0.1
+				production_factory_efficiency_gain_factor = 0.05
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		PAP_roman_new_deal = {
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_roman_new_deal"}
+			picture = NYC_new_man
+			allowed = { always = no }
+            modifier = {
+				production_factory_max_efficiency_factor = 0.10
+				industrial_capacity_factory = 0.10
+				production_speed_buildings_factor = 0.10
+				political_power_gain = 0.01
+			}
+		}
+
 		PAP_food_kitchens = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_food_kitchens"}
 			picture = generic_goods_red_bonus
@@ -79,7 +111,6 @@ ideas = {
             modifier = {
 				consumer_goods_factor = -0.10
 				stability_factor = 0.15
-#				foreign_subversive_activites = -0.05
 			}
 		}
 
@@ -212,7 +243,7 @@ ideas = {
 		PAP_heavyindustry = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_heavyindustry"}
 			allowed = { always = no }
-			picture = IRE_tank_focus
+			picture = IRE_heavy_industry
 			equipment_bonus = {
 				motorized_equipment = {
 					build_cost_ic = -0.10
@@ -304,7 +335,7 @@ ideas = {
 
 		PAP_gendarmerie = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_gendarmerie"}
-			picture = the_long_lance
+			picture = TEX_basedcatholicsamiright
 			allowed = { always = no }
             modifier = {
 				required_garrison_factor = -0.3
@@ -315,7 +346,7 @@ ideas = {
 		PAP_ASF = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea PAP_ASF"}
 			allowed = { always = no }
-			picture = IRE_tank_focus
+			picture = NFA_liberation_army
 			equipment_bonus = {
 				infantry_equipment = {
 					build_cost_ic = -0.1

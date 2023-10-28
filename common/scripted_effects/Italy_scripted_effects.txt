@@ -677,7 +677,7 @@ italy_add_claim_and_transfer_if_owned_by_subject = {
 	}
 	if = {
 		limit = { owner = { is_subject_of = ROOT } }
-		owner = { country_event = ita.170 }
+		owner = { country_event = italianrepublic.170 }
 		transfer_state_during_war = yes
 	}
 }
@@ -695,7 +695,7 @@ italy_claim_irredentist_state_effect = {
 	#if owned by puppet, transfer
 	if = {
 		limit = { owner = { is_subject_of = ROOT } }
-		hidden_effect = { owner = { country_event = ita.170 } }
+		hidden_effect = { owner = { country_event = italianrepublic.170 } }
 		if = {
 			limit = { is_fully_controlled_by = owner }
 			transfer_state_to = ROOT
@@ -722,7 +722,7 @@ italy_claim_irredentist_state_effect = {
 					}
 				}
 			}
-			owner = { country_event = ita.170 }
+			owner = { country_event = italianrepublic.170 }
 		}
 
 		#if owned by ally, notify all members and leave faction
@@ -757,7 +757,7 @@ italy_break_balance = {
 	if = {
 		limit = { has_global_flag = KR_italy_balance }
 		custom_effect_tooltip = SRI_balance_will_be_broken
-		country_event = socitaly.1270
+		country_event = socitaly.127
 	}
 }
 
@@ -773,116 +773,29 @@ italy_add_reunification_wars_threat = {
 	}
 }
 
-fuck_the_shit_out_of_italy = {
-	ITA = {
-		remove_state_core = 160
-		remove_state_core = 759
-		remove_state_core = 159
-	}
-	SRI = {
-		remove_state_core = 1003
-		remove_state_core = 1004
-		remove_state_core = 1005
-		remove_state_core = 1149
-		remove_state_core = 157
-		remove_state_core = 158
-		#remove_state_core = 159
-		remove_state_core = 161
-		remove_state_core = 162
-		remove_state_core = 735
-		remove_state_core = 764
-		remove_state_core = 838
-	}
-	SIC = {
-		transfer_state = 1006
-		transfer_state = 115
-		transfer_state = 117
-		transfer_state = 156
-		transfer_state = 742
-		transfer_state = 837	
-		
-		add_state_core = 1006
-		add_state_core = 115
-		add_state_core = 117
-		add_state_core = 156
-		add_state_core = 742
-		add_state_core = 837
-	}
-	PAP = {
-		transfer_state = 2	
-		transfer_state = 1149	
-		transfer_state = 1005	
-		transfer_state = 157	
-		transfer_state = 161	
-		transfer_state = 764	
-		
-		add_state_core = 2
-		add_state_core = 1149
-		add_state_core = 1005
-		add_state_core = 157
-		add_state_core = 161
-		add_state_core = 764
-	}	
-	TUS = {
-		transfer_state = 162	
-		
-		add_state_core = 162
-	}
-	VNC = {
-		transfer_state = 759	
-		transfer_state = 160	
-		
-		add_state_core = 759	
-		add_state_core = 160	
-	}
-	SRD = {
-		add_state_core = 114
-		add_state_core = 1002
-		add_state_core = 158
-		add_state_core = 838
-		add_state_core = 1003
-		
-		transfer_state = 114
-		transfer_state = 1002
-		transfer_state = 158
-		transfer_state = 838
-		transfer_state = 1003
-	}
-	every_state = {
-		limit = {
-			state = 159
-		}
-		if = {
-			limit = { is_claimed_by = LOM }
-			remove_claim_by = LOM
-		}
-		if = {
-			limit = { NOT = { is_core_of = LOM } }
-			add_core_of = LOM
-		}
-		LOM = { transfer_state = PREV }
-	}
-	EMI = {
-		add_state_core = 1004
-	}
-	FRA = {
-		add_state_core = 735
-		add_state_core = 762
-		transfer_state = 735
-		transfer_state = 762
-	}
-	EMI = { transfer_state = 1004 }
-	set_global_flag = KX_ITA_COMPLETLEY_FUCKED
-	159 = {
-		set_demilitarized_zone = no
-		}
-}
-
 create_pope = {
 	if = {
 		limit = { has_global_flag = Pope_Julius_IV }
 		ITA = {
 			ITA_create_Julius_IV = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Adrian_VII }
+		ITA = {
+			ITA_create_Adrian_VII = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Leo_XIV }
+		ITA = {
+			ITA_create_Leo_XIV = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Benedict_XVI }
+		ITA = {
+			ITA_create_Benedict_XVI = yes
 		}
 	}
 	else_if = {
@@ -892,14 +805,47 @@ create_pope = {
 		}
 	}
 	else_if = {
-		limit = { has_global_flag = Pope_Stephen_X }
+		limit = { has_global_flag = Pope_Pius_XII }
 		ITA = {
-			ITA_create_Stephen_X = yes
+			ITA_create_Pius_XII = yes
+		}
+	}
+}
+
+PAP_create_pope = {
+	if = {
+		limit = { has_global_flag = Pope_Julius_IV }
+		PAP = {
+			ITA_create_Julius_IV = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Adrian_VII }
+		PAP = {
+			ITA_create_Adrian_VII = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Leo_XIV }
+		PAP = {
+			ITA_create_Leo_XIV = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Benedict_XVI }
+		PAP = {
+			ITA_create_Benedict_XVI = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_John_XXIII }
+		PAP = {
+			ITA_create_John_XXIII = yes
 		}
 	}
 	else_if = {
 		limit = { has_global_flag = Pope_Pius_XII }
-		ITA = {
+		PAP = {
 			ITA_create_Pius_XII = yes
 		}
 	}
@@ -913,15 +859,27 @@ SIC_create_pope = {
 		}
 	}
 	else_if = {
-		limit = { has_global_flag = Pope_John_XXIII }
+		limit = { has_global_flag = Pope_Adrian_VII }
 		SIC = {
-			ITA_create_John_XXIII = yes
+			ITA_create_Adrian_VII = yes
 		}
 	}
 	else_if = {
-		limit = { has_global_flag = Pope_Stephen_X }
+		limit = { has_global_flag = Pope_Leo_XIV }
 		SIC = {
-			ITA_create_Stephen_X = yes
+			ITA_create_Leo_XIV = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_Benedict_XVI }
+		SIC = {
+			ITA_create_Benedict_XVI = yes
+		}
+	}
+	else_if = {
+		limit = { has_global_flag = Pope_John_XXIII }
+		SIC = {
+			ITA_create_John_XXIII = yes
 		}
 	}
 	else_if = {
@@ -1047,9 +1005,7 @@ ITA_create_Pius_XII = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = SRI
-				}
+				tag = SIC
 			}
 			create_country_leader = {
 				name = "Pius XII"
@@ -1077,92 +1033,6 @@ ITA_create_Pius_XII = {
 			}
 		}
 		set_global_flag = Pope_Pius_XII
-	}
-}
-
-ITA_create_Stephen_X = {
-	custom_effect_tooltip = ITA_Stephen_X_will_become_pope
-	hidden_effect = {
-		create_country_leader = {
-			name = "Stephen X"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-			desc = "POLITICS_STEPHEN_X_DESC"
-			expire = "1965.1.1"
-			ideology = fundementalism_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Stephen X"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-			desc = "POLITICS_STEPHEN_X_DESC"
-			expire = "1965.1.1"
-			ideology = theocracy_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Stephen X"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-			desc = "POLITICS_STEPHEN_X_DESC"
-			expire = "1965.1.1"
-			ideology = autdem_christian_democracy_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Stephen X"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-			desc = "POLITICS_STEPHEN_X_DESC"
-			expire = "1965.1.1"
-			ideology = social_conservative_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Stephen X"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-			desc = "POLITICS_STEPHEN_X_DESC"
-			expire = "1965.1.1"
-			ideology = social_liberal_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Stephen X"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-			desc = "POLITICS_STEPHEN_X_DESC"
-			expire = "1965.1.1"
-			ideology = social_democrat_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		if = {
-			limit = {
-				OR = {
-					tag = SRI
-				}
-			}
-			create_country_leader = {
-				name = "Stephen X"
-				picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-				desc = "POLITICS_STEPHEN_X_DESC"
-				expire = "1965.1.1"
-				ideology = socdem_fascism_subtype
-				traits = { ITA_the_mfing_pope} 
-			}
-			create_country_leader = {
-				name = "Stephen X"
-				picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-				desc = "POLITICS_STEPHEN_X_DESC"
-				expire = "1965.1.1"
-				ideology = fascism_subtype
-				traits = { ITA_the_mfing_pope} 
-			}
-			create_country_leader = {
-				name = "Stephen X"
-				picture = "gfx/leaders/PAP/Portrait_Papal_State_Stephen.png"
-				desc = "POLITICS_STEPHEN_X_DESC"
-				expire = "1965.1.1"
-				ideology = syn_fascism_subtype
-				traits = { ITA_the_mfing_pope} 
-			}
-		}
-		set_global_flag = Pope_Stephen_X
 	}
 }
 
@@ -1227,9 +1097,7 @@ ITA_create_John_XXIII = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = SRI
-				}
+				tag = SIC
 			}
 			create_country_leader = {
 				name = "John XXIII"
@@ -1257,6 +1125,190 @@ ITA_create_John_XXIII = {
 			}
 		}
 		set_global_flag = Pope_John_XXIII
+	}
+}
+
+ITA_create_Leo_XIV = {
+	custom_effect_tooltip = ITA_Leo_XIV_will_become_pope
+	hidden_effect = {
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = fundementalism_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = theocracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = autdem_christian_democracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Leo XIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+			desc = "POLITICS_LEO_XIV_DESC"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		if = {
+			limit = {
+				tag = SIC
+			}
+			create_country_leader = {
+				name = "Leo XIV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+				desc = "POLITICS_LEO_XIV_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Leo XIV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+				desc = "POLITICS_LEO_XIV_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Leo XIV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Leo.png"
+				desc = "POLITICS_LEO_XIV_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+		}
+		set_global_flag = Pope_Leo_XIV
+	}
+}
+
+ITA_create_Benedict_XVI = {
+	custom_effect_tooltip = ITA_Benedict_XVI_will_become_pope
+	hidden_effect = {
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = fundementalism_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = theocracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = autdem_christian_democracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Benedict XVI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+			desc = "POLITICS_BENEDICT_XVI_DESC"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		if = {
+			limit = {
+				tag = SIC
+			}
+			create_country_leader = {
+				name = "Benedict XVI"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+				desc = "POLITICS_BENEDICT_XVI_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Benedict XVI"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+				desc = "POLITICS_BENEDICT_XVI_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Benedict XVI"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Benedict.png"
+				desc = "POLITICS_BENEDICT_XVI_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+		}
+		set_global_flag = Pope_Benedict_XVI
 	}
 }
 
@@ -1327,36 +1379,511 @@ ITA_create_Julius_IV = {
 		}
 		if = {
 			limit = {
-				OR = {
-					tag = SIC
-				}
+				tag = SIC
 			}
 			create_country_leader = {
-			name = "Julius IV"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Julius.png"
-			desc = "POLITICS_JULIUS_IV_DESC"
-			expire = "1965.1.1"
-			ideology = fascism_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Julius IV"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Julius.png"
-			desc = "POLITICS_JULIUS_IV_DESC"
-			expire = "1965.1.1"
-			ideology = socdem_fascism_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
-		create_country_leader = {
-			name = "Julius IV"
-			picture = "gfx/leaders/PAP/Portrait_Papal_State_Julius.png"
-			desc = "POLITICS_JULIUS_IV_DESC"
-			expire = "1965.1.1"
-			ideology = syn_fascism_subtype
-			traits = { ITA_the_mfing_pope} 
-		}
+				name = "Julius IV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Julius.png"
+				desc = "POLITICS_JULIUS_IV_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Julius IV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Julius.png"
+				desc = "POLITICS_JULIUS_IV_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Julius IV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Julius.png"
+				desc = "POLITICS_JULIUS_IV_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
 		}
 	}
+}
+
+ITA_create_Adrian_VII = {
+	custom_effect_tooltip = ITA_Adrian_VII_will_become_pope
+	hidden_effect = {
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = fundementalism_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = theocracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = autdem_christian_democracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = market_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Adrian VII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+			desc = "POLITICS_ADRIAN_VII_DESC"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		set_global_flag = Pope_Julius_IV
+		set_party_name = { 
+			ideology = national_populist 
+			long_name = ITA_national_populist_party_long 
+			name = ITA_national_populist_party
+		}
+		if = {
+			limit = {
+				tag = SIC
+			}
+			create_country_leader = {
+				name = "Adrian VII"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+				desc = "POLITICS_ADRIAN_VII_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Adrian VII"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+				desc = "POLITICS_ADRIAN_VII_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Adrian VII"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Adrian.png"
+				desc = "POLITICS_ADRIAN_VII_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+		}
+	}
+}
+
+ITA_create_Gregorius_XVII = {
+	custom_effect_tooltip = ITA_Gregorius_XVII_will_become_pope
+	hidden_effect = {
+		create_country_leader = {
+			name = "Gregorius XVII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+			desc = "POLITICS_GREGORIUS_XVII_DESC"
+			expire = "1965.1.1"
+			ideology = fundementalism_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Gregorius XVII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+			desc = "POLITICS_GREGORIUS_XVII_DESC"
+			expire = "1965.1.1"
+			ideology = theocracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Gregorius XVII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+			desc = "POLITICS_GREGORIUS_XVII_DESC"
+			expire = "1965.1.1"
+			ideology = autdem_christian_democracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Gregorius XVII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+			desc = "POLITICS_GREGORIUS_XVII_DESC"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Gregorius XVII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+			desc = "POLITICS_GREGORIUS_XVII_DESC"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Gregorius XVII"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+			desc = "POLITICS_GREGORIUS_XVII_DESC"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		if = {
+			limit = {
+				tag = SIC
+			}
+			create_country_leader = {
+				name = "Gregorius XVII"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+				desc = "POLITICS_GREGORIUS_XVII_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Gregorius XVII"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+				desc = "POLITICS_GREGORIUS_XVII_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Gregorius XVII"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Gregorius_XVII.png"
+				desc = "POLITICS_GREGORIUS_XVII_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+		}
+		set_global_flag = Pope_Gregorius_XVII
+	}
+}
+
+ITA_create_John_XXIV = {
+	custom_effect_tooltip = ITA_John_XXIV_will_become_pope
+	hidden_effect = {
+		create_country_leader = {
+			name = "John XXIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+			desc = "POLITICS_JOHN_XXIV_DESC"
+			expire = "1965.1.1"
+			ideology = fundementalism_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "John XXIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+			desc = "POLITICS_JOHN_XXIV_DESC"
+			expire = "1965.1.1"
+			ideology = theocracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "John XXIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+			desc = "POLITICS_JOHN_XXIV_DESC"
+			expire = "1965.1.1"
+			ideology = autdem_christian_democracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "John XXIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+			desc = "POLITICS_JOHN_XXIV_DESC"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "John XXIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+			desc = "POLITICS_JOHN_XXIV_DESC"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "John XXIV"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+			desc = "POLITICS_JOHN_XXIV_DESC"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		if = {
+			limit = {
+				tag = SIC
+			}
+			create_country_leader = {
+				name = "John XXIV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+				desc = "POLITICS_JOHN_XXIV_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "John XXIV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+				desc = "POLITICS_JOHN_XXIV_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "John XXIV"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_John_XXIV.png"
+				desc = "POLITICS_JOHN_XXIV_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+		}
+		set_global_flag = Pope_John_XXIV
+	}
+}
+
+ITA_create_Paulus_VI = {
+	custom_effect_tooltip = ITA_Paulus_VI_will_become_pope
+	hidden_effect = {
+		create_country_leader = {
+			name = "Paulus VI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+			desc = "POLITICS_PAUL_VI_DESC"
+			expire = "1965.1.1"
+			ideology = fundementalism_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Paulus VI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+			desc = "POLITICS_PAUL_VI_DESC"
+			expire = "1965.1.1"
+			ideology = theocracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Paulus VI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+			desc = "POLITICS_PAUL_VI_DESC"
+			expire = "1965.1.1"
+			ideology = autdem_christian_democracy_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Paulus VI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+			desc = "POLITICS_PAUL_VI_DESC"
+			expire = "1965.1.1"
+			ideology = social_conservative_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Paulus VI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+			desc = "POLITICS_PAUL_VI_DESC"
+			expire = "1965.1.1"
+			ideology = social_liberal_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		create_country_leader = {
+			name = "Paulus VI"
+			picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+			desc = "POLITICS_PAUL_VI_DESC"
+			expire = "1965.1.1"
+			ideology = social_democrat_subtype
+			traits = { ITA_the_mfing_pope} 
+		}
+		if = {
+			limit = {
+				tag = SIC
+			}
+			create_country_leader = {
+				name = "Paulus VI"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+				desc = "POLITICS_PAUL_VI_DESC"
+				expire = "1965.1.1"
+				ideology = socdem_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Paulus VI"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+				desc = "POLITICS_PAUL_VI_DESC"
+				expire = "1965.1.1"
+				ideology = fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+			create_country_leader = {
+				name = "Paulus VI"
+				picture = "gfx/leaders/PAP/Portrait_Papal_State_Paulus_VI.png"
+				desc = "POLITICS_PAUL_VI_DESC"
+				expire = "1965.1.1"
+				ideology = syn_fascism_subtype
+				traits = { ITA_the_mfing_pope} 
+			}
+		}
+		set_global_flag = Pope_Paulus_VI
+	}
+}
+
+PAP_setup_roman_republic_puppet = {
+	set_cosmetic_tag = PAP_republic
+	create_country_leader = {
+		name = "Reginaldo Giuliani"
+		picture = "gfx/leaders/PAP/Portrait_Papal_State_Reginaldo_Giuliani.png"
+		expire = "1965.1.1"
+		ideology = legionarism_subtype
+	}
+	create_country_leader = {
+		name = "Luigi Maglione"
+		picture = "gfx/leaders/PAP/Portrait_Papal_State_Luigi_Maglione.png"
+		expire = "1965.1.1"
+		ideology = theocracy_subtype
+	}
+	create_country_leader = {
+		name = "Ludovico Spada Veralli Potenziani"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Ludovico_Spada_Veralli_Potenziani.png"
+		expire = "1965.1.1"
+		ideology = authdem_austropopulism_subtype
+	}
+	create_country_leader = {
+		name = "Giuseppe Donati"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Giuseppe_Donati.png"
+		expire = "1965.1.1"
+		ideology = christian_democracy_subtype
+	}
+	create_country_leader = {
+		name = "Guglielmo Giannini"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Guglielmo_Giannini.png"
+		expire = "1965.1.1"
+		ideology = marlib_qualunquismo_subtype
+	}
+	create_country_leader = {
+		name = "Romolo Murri"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Romolo_Murri.png"
+		expire = "1965.1.1"
+		ideology = soclib_christian_democracy_subtype
+	}
+	create_country_leader = {
+		name = "Gerardo Bruni"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Gerardo_Bruni.png"
+		expire = "1965.1.1"
+		ideology = socdem_christian_socialism_subtype
+	}
+	create_country_leader = {
+		name = "Zeno Saltini"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Zeno_Saltini.png"
+		expire = "1965.1.1"
+		ideology = christian_socialism_subtype
+	}
+	create_country_leader = {
+		name = "Fulvio Milani"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Fulvio_Milani.png"
+		expire = "1965.1.1"
+		ideology = christian_syndicalism_subtype
+	}
+	create_country_leader = {
+		name = "Franco Rodano"
+		picture = "gfx/leaders/PAP/Portrait_PAP_Franco_Rodano.png"
+		expire = "1965.1.1"
+		ideology = christian_communism_subtype
+	}
+}
+
+SIC_setup_parthenopean_republic_puppet = {
+	set_cosmetic_tag = SIC_republic
+	create_country_leader = {
+	name = "Amadeo Bordiga"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Amadeo_Bordiga.png"
+	expire = "1965.1.1"
+	ideology = bordigism_subtype
+}
+create_country_leader = {
+	name = "Girolamo Li Causi"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Girolamo_Li_Causi.png"
+	expire = "1965.1.1"
+	ideology = syndicalist_subtype
+}
+create_country_leader = {
+	name = "Riccardo Lombardi"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Riccardo_Lombardi.png"
+	expire = "1965.1.1"
+	ideology = fascism_subtype
+}
+create_country_leader = {
+	name = "Gaetano Salvemini"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Gaetano_Salvemini.png"
+	expire = "1965.1.1"
+	ideology = concretismo_subtype
+}
+create_country_leader = {
+	name = "Francesco Saverio Nitti"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Francesco_Saverio_Nitti.png"
+	expire = "1965.1.1"
+	ideology = radical_liberalism_subtype
+}
+create_country_leader = {
+	name = "Benedetto Croce"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Benedetto_Croce.png"
+	expire = "1965.1.1"
+	ideology = liberalism_spirit_subtype
+}
+create_country_leader = {
+	name = "Luigi Sturzo"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Luigi_Sturzo.png"
+	expire = "1965.1.1"
+	ideology = popularism_subtype
+}
+create_country_leader = {
+	name = "Pietro Lanza di Scalea"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Pietro_Lanza_di_Scalea.png"
+	expire = "1965.1.1"
+	ideology = authdem_agrarianism_subtype
+}
+create_country_leader = {
+	name = "Achille Lauro"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Achille_Lauro.png"
+	expire = "1965.1.1"
+	ideology = laurismo_subtype
+}
+create_country_leader = {
+	name = "Giovanni Preziosi"
+	picture = "gfx/leaders/SIC/Portrait_SIC_Giovanni_Preziosi.png"
+	expire = "1965.1.1"
+	ideology = integralism_subtype
+}
 }
 
 SRI_become_not_socialist_like = {

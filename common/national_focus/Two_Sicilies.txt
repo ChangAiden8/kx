@@ -12,6 +12,9 @@ focus_tree = {
 			tag = SIC
 		}
 	}
+	shared_focus = ITA_Consolidate_Italy
+	shared_focus = ITA_Interventionism
+	shared_focus = ITA_Neutrality
 	default = no
 focus = {# The Royal Army
 		id = SIC_armed_forces
@@ -874,6 +877,64 @@ focus = {# The Royal Army
 					}
 				}
 				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = SIC_mafia_peace
+		icon = GFX_goal_CSA_Mobster_Populism_All_Americans
+		cost = 7.00
+		prerequisite = {
+			focus = SIC_development
+			focus = SIC_armed_forces
+		}
+		relative_position_id = SIC_development
+		x = -7
+		y = 1
+		available = {
+			has_idea = SIC_crime_problem
+		}
+		mutually_exclusive = {
+			focus = SIC_mafia_war
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SIC_mafia_peace"
+			custom_effect_tooltip = SIC_mafia_tooltip
+			swap_ideas = {
+				remove_idea = SIC_crime_problem
+				add_idea = SIC_crime_problem_peace
+			}
+		}
+	}
+	focus = {
+		id = SIC_mafia_war
+		icon = GFX_goal_CSA_Pursue_Criminality_Above_All_Else
+		cost = 7.00
+		prerequisite = {
+			focus = SIC_development
+			focus = SIC_armed_forces
+		}
+		relative_position_id = SIC_development
+		x = -10
+		y = 1
+		available = {
+			has_idea = SIC_crime_problem
+		}
+		mutually_exclusive = {
+			focus = SIC_mafia_peace
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus SIC_mafia_war"
+			remove_ideas = SIC_crime_problem
+			add_timed_idea = {
+				idea = SIC_crime_problem_war
+				days = 180
 			}
 		}
 	}
@@ -1868,7 +1929,13 @@ focus = {# The Royal Army
 		}
 		x = -1
 		y = 1
-		available = { has_country_flag = SIC_confed }
+		available = { 
+			has_country_flag = SIC_confed 
+			OR = {
+				has_completed_focus = SIC_mafia_peace
+				has_completed_focus = SIC_mafia_war
+			}
+		}
 		ai_will_do = {	factor = 20	}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_old_order"
@@ -1897,6 +1964,10 @@ focus = {# The Royal Army
 			PAP = {
 				add_political_power = 200
 				add_manpower = 20000
+			}
+			if = {
+				limit = { has_idea = SIC_crime_problem_peace }
+				remove_ideas = SIC_crime_problem_peace
 			}
 		}
 	}
@@ -2102,6 +2173,10 @@ focus = {# The Royal Army
 				has_completed_focus = SIC_papal_crowning
 				has_completed_focus = SIC_unbreakable_bundle
 			}
+			OR = {
+				has_completed_focus = SIC_mafia_peace
+				has_completed_focus = SIC_mafia_war
+			}
 		}
 		ai_will_do = {	factor = 99	}
 		completion_reward = {
@@ -2110,6 +2185,10 @@ focus = {# The Royal Army
 			add_stability = 0.1
 			add_war_support = 0.1
 			add_manpower = 5000
+			if = {
+				limit = { has_idea = SIC_crime_problem_peace }
+				remove_ideas = SIC_crime_problem_peace
+			}
 		}
 	}
 	focus = {# First Italian Empire
@@ -2161,7 +2240,8 @@ focus = {# The Royal Army
 		ai_will_do = { factor = 30 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_ittalia_irredenta"
-			custom_effect_tooltip = ITA_irredentist_decisions
+			country_event = italy_shared.30
+			custom_effect_tooltip = ITA_new_focuses_will_unlock
 			set_country_flag = italy_irredentist_decisions_unlocked
 			add_war_support = 0.10
 			if = {
@@ -2611,7 +2691,7 @@ focus = {# The Royal Army
 				remove_idea = SIC_integralist_kingdom_idea_2
 				add_idea = SIC_integralist_kingdom_idea_3
 			}
-			add_popularity = { ideology = national_populist popularity = 0.1 }
+			increase_ruling_party_popularity_by_10 = yes
 		}
 	}
 	focus = {# Communes Protected
@@ -2980,7 +3060,7 @@ focus = {# The Royal Army
 				}
 			}
 		}
-		cost = 6.00
+		cost = 7.2
 		relative_position_id = SIC_ride_the_tiger
 		x = -3
 		y = 4
@@ -2995,6 +3075,10 @@ focus = {# The Royal Army
 			id = sic.1170
 			days = 3
 				}
+			country_event = {
+			id = sic.1210
+			days = 7
+			}
 		PAP = {
 		add_opinion_modifier = {
 			target = SIC
@@ -3012,14 +3096,9 @@ focus = {# The Royal Army
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_anti_clericalism"
 			add_stability = -0.03
-			release = PAP
 			add_political_power = 25
 			custom_effect_tooltip = SIC_catholics_angered
 			hidden_effect = {
-			country_event = {
-			id = sic.1210
-			days = 10
-			}
 			country_event = {
 			id = sic.1250
 			days = 5
@@ -3288,6 +3367,7 @@ focus = {# The Royal Army
 		available = { 
 		has_government = national_populist
 		has_country_flag = SIC_Kings_return
+		has_completed_focus = SIC_anti_clericalism
 		hidden_trigger = {
 				NOT = {
 					has_country_leader_ideology = pioism_subtype
@@ -3351,6 +3431,7 @@ focus = {# The Royal Army
 		available = {	
 		has_government = national_populist
 		has_country_flag = SIC_Kings_return
+		has_completed_focus = SIC_anti_clericalism
 		hidden_trigger = {
 				NOT = {
 					has_country_leader_ideology = pioism_subtype
@@ -3427,6 +3508,7 @@ focus = {# The Royal Army
 		available = { 
 		has_government = national_populist 
 		has_country_flag = SIC_Kings_return
+		has_completed_focus = SIC_anti_clericalism
 		hidden_trigger = {
 				NOT = {
 					has_country_leader_ideology = pioism_subtype
@@ -3555,10 +3637,6 @@ focus = {# The Royal Army
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_ascetic_values"
 			add_stability = 0.05
 			add_popularity = { ideology = national_populist popularity = 0.03 }
-			swap_ideas = {
-				add_idea = SIC_BM_1
-				remove_idea = SIC_BM_2
-			}
 			custom_effect_tooltip = SIC_massive_power
 			hidden_effect = {
 				modify_country_flag = {
@@ -3694,7 +3772,6 @@ focus = {# The Royal Army
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_spiritual_casteism"
 			add_stability = 0.08
 			add_popularity = { ideology = national_populist popularity = 0.05 }
-			remove_ideas = SIC_BM_1
 			swap_ideas = {
 			remove_idea = SIC_caste_system
 			add_idea = SIC_caste_system_2
@@ -3801,6 +3878,10 @@ focus = {# The Royal Army
 							country_event = {
 							id = sic.1610
 							days = 50
+							}
+							country_event = {
+							id = sic.1720
+							days = 85
 							}
 						}
 					custom_effect_tooltip = SIC_massive_power
@@ -4624,21 +4705,6 @@ focus = {# The Royal Army
 			log = "[GetDateText]: [Root.GetName]: Focus SIC_operations_northwards"
 			add_war_support = 0.1
 			add_political_power = 50
-			156 = {
-			set_demilitarized_zone = no
-			}
-			837 = {
-			set_demilitarized_zone = no
-			}
-			1006 = {
-			set_demilitarized_zone = no
-			}
-			117 = {
-			set_demilitarized_zone = no
-			}
-			742 = {
-			set_demilitarized_zone = no
-			}
 			SRI = {
 				add_stability = -0.15
 				add_popularity = {
@@ -5276,21 +5342,6 @@ focus = {# The Royal Army
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus SRI_future_of_italy"	
 			country_event = cathitaly.2
-			156 = {
-			set_demilitarized_zone = no
-			}
-			837 = {
-			set_demilitarized_zone = no
-			}
-			1006 = {
-			set_demilitarized_zone = no
-			}
-			117 = {
-			set_demilitarized_zone = no
-			}
-			742 = {
-			set_demilitarized_zone = no
-			}
 		}
 	}	
 	focus = {
@@ -6395,21 +6446,6 @@ focus = {# The Royal Army
 						remove_idea = SRI_low_peasant_idea
 						add_idea = SRI_medium_peasant_idea
 					}
-					156 = {
-					set_demilitarized_zone = no
-					}
-					837 = {
-					set_demilitarized_zone = no
-					}
-					1006 = {
-					set_demilitarized_zone = no
-					}
-					117 = {
-					set_demilitarized_zone = no
-					}
-					742 = {
-					set_demilitarized_zone = no
-					}
 				}
 	}
 	focus = {
@@ -6881,13 +6917,13 @@ focus = {# The Royal Army
 		log = "[GetDateText]: [Root.GetName]: Focus SRI_absorb_allies"
 			set_party_name = { 
 				ideology = syndicalist
-				long_name = SRI_fascists_party_long 
-				name = SRI_fascists_party
+				long_name = SIC_radical_socialist_party_long 
+				name = SIC_radical_socialist_party
 			}
 			set_party_name = { 
 				ideology = social_democrat
-				long_name = SRI_fascists_party_long 
-				name = SRI_fascists_party
+				long_name = SIC_radical_socialist_party_long 
+				name = SIC_radical_socialist_party
 			}
 			create_country_leader = {
 				name = "Riccardo Lombardi"
@@ -6903,6 +6939,8 @@ focus = {# The Royal Army
 				expire = "1965.1.1"
 				ideology = socdem_fascism_subtype
 			}
+			add_socdem_to_coalition = yes
+			add_synd_to_coalition = yes
 			hidden_effect = {
 				country_event = {
 					id = socfascist.12
@@ -6948,6 +6986,12 @@ focus = {# The Royal Army
 					}
 				}
 			PAP = {
+				country_event = {
+					id = socfascist.8
+					days = 2
+				}
+			}
+			SRD = {
 				country_event = {
 					id = socfascist.8
 					days = 2

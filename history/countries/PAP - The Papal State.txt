@@ -6,10 +6,10 @@ set_naval_oob= "PAP_naval"
 set_research_slots = 3
 
 add_ideas = {
-	PAP_Ludovico_Chigi_Albani_della_Rovere_hog_pau
-	PAP_Luigi_Vannutelli_Rey_for_pau
-	PAP_Pietro_Campilli_eco_ade
-	PAP_Alfredo_Ottaviani_sec_ade
+	PAP_Eugenio_Pacelli_hog_pau
+	PAP_Domenico_Tardini_for_pau
+	PAP_Bernardino_Nogara_eco_pau
+	PAP_Giovanni_Battista_Montini_sec_pau
 
 	PAP_holy_see
 	PAP_future_past_idea
@@ -142,6 +142,7 @@ country_event = { id = papalstate.40 days = 1 }
 country_event = { id = papalstate.3 days = 32 }
 country_event = { id = papalstate.2 days = 65 }
 country_event = { id = papalstate.7 days = 70 }
+country_event = { id = papalstate.66 days = 200 } #A New Branch of the Italian Numismatic Society
 
 set_convoys = 50
 set_stability = 0.6
@@ -185,6 +186,7 @@ create_country_leader = {
 	desc = "POLITICS_PIUS_XI_DESC"
 	expire = "1965.1.1"
 	ideology = theocracy_subtype
+	traits = { ITA_the_mfing_pope } 
 }
 create_country_leader = {
 	name = "Ludovico Spada Veralli Potenziani"
@@ -253,6 +255,7 @@ create_corps_commander = {
 	name = "Reginaldo Giuliani"
 	portrait_path = "gfx/leaders/PAP/Portrait_Papal_State_Reginaldo_Giuliani.png"
 	traits = {
+		PAP_fiamme_bianche
 		career_officer
 		politically_connected
 		trait_engineer
@@ -267,6 +270,7 @@ create_corps_commander = {
 	name = "Georg von Sury d'Aspremont"
 	portrait_path = "gfx/leaders/PAP/Portrait_Papal_State_Aspermont.png"
 	traits = {
+		PAP_swiss_guard
 		old_guard
 		brilliant_strategist
 		trait_mountaineer
@@ -281,6 +285,7 @@ create_corps_commander = {
 	name = "Robert Nünlist-Degen"
 	portrait_path = "gfx/leaders/PAP/Portrait_PAP_Robert.png"
 	traits = {
+		PAP_swiss_guard
 		old_guard
 	}
 	skill = 3
@@ -293,6 +298,7 @@ create_corps_commander = {
 	name = "Alois Hirschbühl"
 	portrait_path = "gfx/leaders/PAP/Portrait_PAP_Alois.png"
 	traits = {
+		PAP_swiss_guard
 		old_guard
 	}
 	skill = 2
@@ -305,6 +311,7 @@ create_corps_commander = {
 	name = "Heinrich Pfyffer von Altishofen"
 	portrait_path = "gfx/leaders/PAP/Portrait_PAP_Heinrich.png"
 	traits = {
+		PAP_swiss_guard
 		old_guard
 	}
 	skill = 4
