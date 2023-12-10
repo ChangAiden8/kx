@@ -3734,12 +3734,6 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName]: Focus COG_self_sufficency"
 			add_ideas = COG_self_sufficency
-			every_country = {
-				reverse_add_opinion_modifier = {
-					target = COG
-					modifier = embargo
-				}
-			}
 			COG_increase_recovery = yes
 		}
 	}
@@ -5292,8 +5286,8 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName]: Focus COG_new_electors"
 			add_ideas = COG_new_electors_idea
 			country_event = {
-				id = congo.27
-				days = 2
+				id = conbel.27
+				days = 4
 			}
 			COG_increase_recovery = yes
 		}

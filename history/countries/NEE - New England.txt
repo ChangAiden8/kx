@@ -49,6 +49,7 @@ if = {
 			iw_large_airframe = 1
 			basic_small_airframe = 1
 			basic_medium_airframe = 1
+			air_torpedoe_1 = 1
 		}
 		NEE_BBA_air_variants = yes
 	else = {
@@ -176,8 +177,6 @@ if = {
 	}
 }
 
-add_opinion_modifier = { target = CSA modifier = embargo }
-add_opinion_modifier = { target = TEX modifier = embargo }
 set_stability = 0.5
 set_war_support = 0.5
 

@@ -41,6 +41,7 @@ if = {
 			iw_small_airframe = 1
 			iw_medium_airframe = 1
 			iw_large_airframe = 1
+			air_torpedoe_1 = 1
 		}
 		DEH_BBA_air_variants = yes
 	else = {
@@ -123,11 +124,6 @@ if = {
 
 set_convoys = 50
 add_political_power = -50
-
-add_opinion_modifier = { target = BHC modifier = embargo }
-add_opinion_modifier = { target = PRF modifier = embargo }
-add_opinion_modifier = { target = GER modifier = embargo }
-add_opinion_modifier = { target = SAF modifier = embargo }
 
 country_event = { id = delhi.1 hours = 2 } #Delhi's Darkest Hour
 country_event = { id = delhi.156 days = 188 } # Death of Sir Mian Fazl-i-Husain

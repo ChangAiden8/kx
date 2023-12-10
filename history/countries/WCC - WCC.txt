@@ -55,6 +55,7 @@ if = {
 		iw_large_airframe = 1
 		basic_small_airframe = 1
 		basic_medium_airframe = 1
+		air_torpedoe_1 = 1
 	}
 	WCC_BBA_air_variants = yes
 }
@@ -185,9 +186,6 @@ if = {
 	}
 }
 
-add_opinion_modifier = { target = CSA modifier = embargo }
-add_opinion_modifier = { target = TEX modifier = embargo }
-add_opinion_modifier = { target = CAL modifier = embargo }
 add_opinion_modifier = { target = LEC modifier = LEC_member }
 add_opinion_modifier = { target = HAI modifier = HAI_foreign_council }
 LEC = { give_military_access = USA }
