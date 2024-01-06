@@ -2896,8 +2896,8 @@ focus_tree = {
 			NOT = {
 			ENT = {
 			is_puppet_of = WCC
-			}
 			has_war_with = WCC
+			}
 			}
 		}
 		relative_position_id = WCC_new_interventionism
@@ -4186,7 +4186,6 @@ focus_tree = {
 			add_war_support = 0.1
 			add_political_power = 30
 			add_manpower = 3000
-			unlock_decision_category_tooltip = USA_new_monroe_doctrine
 		}
 	}
 	

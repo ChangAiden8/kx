@@ -1,6 +1,15 @@
 ### Russian Ideas by soclibdictator
 
 ideas = {
+
+	hidden_ideas = {
+		RUS_aftermath_of_nep = {
+			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_scars_of_russian_revolution"}
+			on_remove = {
+				remove_dynamic_modifier = { modifier = RUS_Aftermath_Of_NEP_modifier }
+			}
+		}
+	}
 ##############
 # Country ideas
 ##############
@@ -365,8 +374,8 @@ ideas = {
 		}
 	}
 	SOV_restored_draft = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SOV_restored_draft"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea SOV_restored_draft"}
+		allowed = { always = no }
 		picture = generic_syndicalist_militia
 		available = { has_country_flag = RUS_yakov_fishman_added }
 		modifier = {
@@ -375,8 +384,8 @@ ideas = {
 		}
 	}
 	SOV_restored_draft_2 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea SOV_restored_draft_2"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea SOV_restored_draft_2"}
+		allowed = { always = no }
 		name = SOV_restored_draft
 		picture = generic_syndicalist_militia
 		available = { has_country_flag = RUS_yakov_fishman_added }
@@ -480,6 +489,7 @@ ideas = {
 				has_socialist_government = yes
 				has_government = social_democrat
 			}
+			NOT = { has_country_flag = soviet_russia_restored }
 		}
 		on_remove = {
 			if = {
@@ -501,8 +511,8 @@ ideas = {
 		}
 	}
 	RUS_capitalist_protest = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_capitalist_protest"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_capitalist_protest"}
+		allowed = { always = no }
 		picture = generic_destruction
 		modifier = {
 			stability_weekly = -0.002
@@ -510,8 +520,8 @@ ideas = {
 		}
 	}
 	RUS_New_Tactics_1 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_New_Tactics_1"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_New_Tactics_1"}
+		allowed = { always = no }
 		name = RUS_New_Tactics
 		picture = liberal_welfare_1
 		modifier = {
@@ -520,8 +530,8 @@ ideas = {
 		}
 	}
 	RUS_New_Tactics_2 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_New_Tactics_2"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_New_Tactics_2"}
+		allowed = { always = no }
 		name = RUS_New_Tactics
 		picture = liberal_welfare_1
 		modifier = {
@@ -541,16 +551,16 @@ ideas = {
 		}
 	}
 	RUS_Judicial_Reform = { #judicial
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_Judicial_Reform"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_Judicial_Reform"}
+		allowed = { always = no }
 		picture = neutrality_idea
 		modifier = {
 			resistance_growth_on_our_occupied_states = 0.07
 		}
 	}
 	RUS_socialists_protest_the_referendum = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_socialists_protest_the_referendum"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_socialists_protest_the_referendum"}
+		allowed = { always = no }
 		picture = generic_disjointed_gov
 		available = {
 			NOT = { has_completed_focus = RUS_Monarchy_Referendum }
@@ -562,9 +572,9 @@ ideas = {
 		}
 	}
 	RUS_non_socialist_trade_unions = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_non_socialist_trade_unions"}
-			allowed = { always = no }
-		picture = economic_control_icon
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_non_socialist_trade_unions"}
+		allowed = { always = no }
+		picture = CAN_anti_syndicalism_decree
 		available = {
 			has_socialist_government = no
 		}
@@ -575,8 +585,8 @@ ideas = {
 		}
 	}
 	RUS_trade_unions_impartiality = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_trade_unions_impartiality"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_trade_unions_impartiality"}
+		allowed = { always = no }
 		picture = economic_control_icon
 		modifier = {
 			production_factory_efficiency_gain_factor = -0.02
@@ -586,8 +596,8 @@ ideas = {
 		}
 	}
 	RUS_pluralism = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_pluralism"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_pluralism"}
+		allowed = { always = no }
 		picture = HOL_workplace_democracy
 		modifier = {
 			syndicalist_drift = 0.02
@@ -602,9 +612,9 @@ ideas = {
 		}
 	}
 	RUS_free_trade_unions = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_free_trade_unions"}
-			allowed = { always = no }
-		picture = TUS_syndie_economy
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_free_trade_unions"}
+		allowed = { always = no }
+			picture = TUS_syndie_economy
 		modifier = {
 			syndicalist_drift = 0.02
 			social_democrat_drift = 0.02
@@ -614,8 +624,8 @@ ideas = {
 		}
 	}
 	RUS_russian_liberalism = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_russian_liberalism"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_russian_liberalism"}
+		allowed = { always = no }
 		picture = liberal_welfare_2
 		modifier = {
 			stability_factor = 0.05
@@ -624,8 +634,8 @@ ideas = {
 		}
 	}
 	RUS_russian_liberalism_1 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_russian_liberalism_1"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_russian_liberalism_1"}
+		allowed = { always = no }
 		picture = liberal_welfare_2
 		name = RUS_russian_liberalism
 		modifier = {
@@ -746,94 +756,94 @@ ideas = {
 		picture = generic_spy_coup
 	}
 	rus_investments = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments"}
+		allowed = { always = no }
 
-			modifier = {
-				consumer_goods_factor = -0.06
-			}	
-			
-			
-			picture = RUS_investments_low
+		modifier = {
+				consumer_goods_factor = -0.02
+		}	
+		
+		
+		picture = RUS_investments_low
 	}
 	rus_investments1 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments1"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments1"}
+		allowed = { always = no }
 
-			modifier = {
-				consumer_goods_factor = -0.14
-			}
-			
-			
-			picture = RUS_investments_medium
+		modifier = {
+				consumer_goods_factor = -0.04
+		}
+		
+		
+		picture = RUS_investments_medium
 	}
 	rus_investments2 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments2"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments2"}
+		allowed = { always = no }
 
-			modifier = {
-				consumer_goods_factor = -0.16
-			}	
-			
-			
-			picture = RUS_investments_large
+		modifier = {
+				consumer_goods_factor = -0.06
+		}	
+		
+		
+		picture = RUS_investments_large
 	}
 	rus_investments3 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments3"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments3"}
+		allowed = { always = no }
 
-			modifier = {
-				consumer_goods_factor = -0.18
-			}	
-			
-			
-			picture = RUS_investments_xlarge
+		modifier = {
+				consumer_goods_factor = -0.08
+		}	
+		
+		
+		picture = RUS_investments_xlarge
 	}
 	rus_investments4 = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments4"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_investments4"}
+		allowed = { always = no }
 
-			modifier = {
-				consumer_goods_factor = -0.3
-				
-			}
+		modifier = {
+				consumer_goods_factor = -0.1
 			
-			picture = RUS_investments_xxlarge
+		}
+		
+		picture = RUS_investments_xxlarge
 	}
 	rus_austerity_measures = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_austerity_measures"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea rus_austerity_measures"}
+		allowed = { always = no }
 
-			modifier = {
-				consumer_goods_factor = 0.07
-				production_factory_max_efficiency_factor = -0.05
-				industrial_capacity_factory = -0.1
-				stability_weekly = -0.002
-			}
-			picture = HUN_austerity_idea
+		modifier = {
+			consumer_goods_factor = 0.27
+			production_factory_max_efficiency_factor = -0.05
+			industrial_capacity_factory = -0.1
+			stability_weekly = -0.002
+		}
+		picture = HUN_austerity_idea
 	}
 	RUS_concessions_to_senate = {
-			on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_concessions_to_senate"}
-			allowed = { always = no }
+		on_add = {log = "[GetDateText]: [Root.GetName]: add idea RUS_concessions_to_senate"}
+		allowed = { always = no }
 
-			modifier = {
-				production_speed_buildings_factor = 0.05
-				consumer_goods_factor = 0.3
-				production_factory_max_efficiency_factor = -0.03
-				trade_opinion_factor = 0.5
-				min_export = -0.25
-				political_power_cost = 0.25
-			}
-			picture = state_economy
+		modifier = {
+			production_speed_buildings_factor = 0.05
+			consumer_goods_factor = 0.3
+			production_factory_max_efficiency_factor = -0.03
+			trade_opinion_factor = -0.5
+			min_export = -0.25
+			political_power_cost = 0.25
+		}
+		picture = state_economy
 	}
 	ger_brest_litovsk = {
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea ger_brest_litovsk"}
-			allowed = { always = no }
-			modifier = {
-				consumer_goods_factor = -0.3
-			}
-			picture = SPR_seize_the_gold_reserves
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea ger_brest_litovsk"}
+		allowed = { always = no }
+		modifier = {
+			consumer_goods_factor = -0.3
 		}
+		picture = SPR_seize_the_gold_reserves
+	}
 	RUS_German_Companies = {
 		allowed = { always = no }
 		available = {
@@ -953,575 +963,16 @@ ideas = {
 			political_power_cost = 0.25
 		}
 	}
-	rus_nep = { #initial
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_1
-						has_idea = rus_nep_2
-						has_idea = rus_nep_3
-						has_idea = rus_nep_4
-						has_idea = rus_nep_5
-						has_idea = rus_nep_6
-						has_idea = rus_nep_7
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}						
-			modifier = {
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = -0.06
-				production_factory_efficiency_gain_factor = 0.03
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_1 = { #smychka
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_2
-						has_idea = rus_nep_3
-						has_idea = rus_nep_4
-						has_idea = rus_nep_5
-						has_idea = rus_nep_6
-						has_idea = rus_nep_7
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}						
-			modifier = {
-				stability_factor = 0.05
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = 0.03
-				production_factory_efficiency_gain_factor = 0.03
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_2 = { #allow small traders
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_2"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_3
-						has_idea = rus_nep_4
-						has_idea = rus_nep_5
-						has_idea = rus_nep_6
-						has_idea = rus_nep_7
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}						
-			modifier = {
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = -0.06
-				production_factory_efficiency_gain_factor = 0.03
-				consumer_goods_factor = 0.3
-				political_power_gain = 0.05
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_3 = { #khozraschyot
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_2"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_4
-						has_idea = rus_nep_5
-						has_idea = rus_nep_6
-						has_idea = rus_nep_7
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}						
-			modifier = {
-				global_building_slots_factor = 0.1
-				production_factory_efficiency_gain_factor = 0.09
-				consumer_goods_factor = 0.3
-				political_power_gain = 0.05
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_4 = { #cautious industrialization
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_2"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_5
-						has_idea = rus_nep_6
-						has_idea = rus_nep_7
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}						
-			modifier = {
-				stability_factor = 0.05
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = 0.03
-				production_factory_efficiency_gain_factor = 0.03
-				production_speed_industrial_complex_factor = 0.15
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_5 = { #kulaks
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_5"}
+	RUS_New_Economic_Policy_initial = { #initial
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep"}
 		allowed = { always = no }
-		name = rus_nep
-		picture = SOV_nep
-		available = {
-			NOT = {
-				OR = {
-					has_idea = rus_nep_6
-					has_idea = rus_nep_7
-					has_idea = rus_nep_8
-					has_idea = rus_nep_9
-					has_idea = rus_nep_10
-					has_idea = rus_nep_11
-					has_idea = rus_nep_12
-					has_idea = rus_nep_13
-					has_idea = rus_nep_14
-				}
-			}
-		}						
 		modifier = {
-			stability_factor = 0.05
 			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.03
+			production_factory_max_efficiency_factor = -0.06
 			production_factory_efficiency_gain_factor = 0.03
-			local_resources_factor = 0.15
-		}
-	}
-	rus_nep_6 = { #smychka + allow small traders
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_7
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}						
-			modifier = {
-				stability_factor = 0.05
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = 0.03
-				production_factory_efficiency_gain_factor = 0.03
-				consumer_goods_factor = 0.3
-				political_power_gain = 0.05
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_7 = { #smychka + khozraschyot
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_8
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}
-			modifier = {
-				stability_factor = 0.05
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = 0.09
-				production_factory_efficiency_gain_factor = 0.09
-				consumer_goods_factor = 0.3
-				political_power_gain = 0.05
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_8 = { #cautious industrialization + allow small traders
-			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-			allowed = { always = no }
-			available = {
-				NOT = {
-					OR = {
-						has_idea = rus_nep_9
-						has_idea = rus_nep_10
-						has_idea = rus_nep_11
-						has_idea = rus_nep_12
-						has_idea = rus_nep_13
-						has_idea = rus_nep_14
-					}
-				}
-			}
-			modifier = {
-				global_building_slots_factor = 0.1
-				production_factory_max_efficiency_factor = -0.06
-				production_factory_efficiency_gain_factor = 0.03
-				consumer_goods_factor = 0.3
-				political_power_gain = 0.05
-				production_speed_industrial_complex_factor = 0.15
-			}
-			picture = SOV_nep
-			name = rus_nep
-	}
-	rus_nep_9 = { #cautious industrialization + khozraschyot
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		available = {
-			NOT = {
-				OR = {
-					has_idea = rus_nep_10
-					has_idea = rus_nep_11
-					has_idea = rus_nep_12
-					has_idea = rus_nep_13
-					has_idea = rus_nep_14
-				}
-			}
-		}
-		modifier = {
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.09
-			production_factory_efficiency_gain_factor = 0.09
-			consumer_goods_factor = 0.3
-			political_power_gain = 0.05
-			production_speed_industrial_complex_factor = 0.15
 		}
 		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_10 = { #kulaks + allow small traders
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		available = {
-			NOT = {
-				OR = {
-					has_idea = rus_nep_11
-					has_idea = rus_nep_12
-					has_idea = rus_nep_13
-					has_idea = rus_nep_14
-				}
-			}
-		}
-		modifier = {
-			stability_factor = 0.05
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.03
-			production_factory_efficiency_gain_factor = 0.03
-			consumer_goods_factor = 0.3
-			political_power_gain = 0.05
-			local_resources_factor = 0.15
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_11 = { #kulaks + khozraschyot
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		available = {
-			NOT = {
-				OR = {
-					has_idea = rus_nep_12
-					has_idea = rus_nep_13
-					has_idea = rus_nep_14
-				}
-			}
-		}
-		modifier = {
-			stability_factor = 0.05
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.09
-			production_factory_efficiency_gain_factor = 0.09
-			consumer_goods_factor = 0.3
-			political_power_gain = 0.05
-			local_resources_factor = 0.15
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_12 = { #kulaks + cautious industrialization
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		available = {
-			NOT = {
-				OR = {
-					has_idea = rus_nep_13
-					has_idea = rus_nep_14
-				}
-			}
-		}
-		modifier = {
-			stability_factor = 0.05
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.03
-			production_factory_efficiency_gain_factor = 0.03
-			production_speed_industrial_complex_factor = 0.15
-			local_resources_factor = 0.15
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_13 = { #kulaks + cautious industrialization + allow small traders
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		available = {
-			NOT = {
-				has_idea = rus_nep_14
-			}
-		}
-		modifier = {
-			stability_factor = 0.05
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.03
-			production_factory_efficiency_gain_factor = 0.03
-			production_speed_industrial_complex_factor = 0.15
-			consumer_goods_factor = 0.3
-			political_power_gain = 0.05
-			local_resources_factor = 0.15
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_14 = { #kulaks + cautious industrialization + khozraschyot
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = 0.05
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.09
-			production_factory_efficiency_gain_factor = 0.09
-			production_speed_industrial_complex_factor = 0.15
-			consumer_goods_factor = 0.3
-			political_power_gain = 0.05
-			local_resources_factor = 0.15
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_15 = { #farmers instead of peasants
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = 0.1
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.09
-			production_factory_efficiency_gain_factor = 0.09
-			production_speed_industrial_complex_factor = 0.15
-			consumer_goods_factor = 0.3
-			political_power_gain = 0.07
-			local_resources_factor = 0.25
-			monthly_population = 0.75
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_16 = { #tax the workers
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = -0.03
-			global_building_slots_factor = 0.1
-			production_factory_max_efficiency_factor = 0.04
-			production_factory_efficiency_gain_factor = 0.04
-			production_speed_industrial_complex_factor = 0.2
-			consumer_goods_factor = -0.15
-			political_power_gain = 0.07
-			local_resources_factor = 0.25
-			monthly_population = 0.75
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_17 = { #fight the urban rural conflict
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = 0.07
-			global_building_slots_factor = 0.15
-			production_factory_max_efficiency_factor = 0.07
-			production_factory_efficiency_gain_factor = 0.12
-			production_speed_industrial_complex_factor = 0.2
-			line_change_production_efficiency_factor = 0.08
-			consumer_goods_factor = -0.15
-			political_power_gain = 0.09
-			local_resources_factor = 0.25
-			monthly_population = 0.95
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_18 = { #strengthen khozraschyot
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = 0.07
-			global_building_slots_factor = 0.25
-			production_factory_max_efficiency_factor = 0.07
-			production_factory_efficiency_gain_factor = 0.18
-			production_speed_industrial_complex_factor = 0.2
-			line_change_production_efficiency_factor = 0.08
-			consumer_goods_factor = -0.15
-			political_power_gain = 0.09
-			local_resources_factor = 0.25
-			monthly_population = 0.95
-		}
-		picture = SOV_nep
-		name = rus_nep
-	}
-	rus_nep_19 = { #full market socialism
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = 0.07
-			global_building_slots_factor = 0.25
-			production_factory_max_efficiency_factor = 0.15
-			production_factory_efficiency_gain_factor = 0.18
-			production_speed_industrial_complex_factor = 0.2
-			line_change_production_efficiency_factor = 0.08
-			consumer_goods_factor = -0.15
-			political_power_gain = 0.09
-			local_resources_factor = 0.25
-			monthly_population = 0.95
-			trade_opinion_factor = -0.25
-		}
-		picture = SOV_nep
-	}
-	rus_down_with_nep = {
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_down_with_nep" }
-		allowed = { always = no }
-		modifier = {
-			stability_factor = -0.20
-			party_popularity_stability_factor = 0.15
-			social_democrat_drift = -0.04
-			global_building_slots_factor = 0.1
-			production_speed_industrial_complex_factor = 0.05
-			political_power_gain = -0.15
-			local_resources_factor = 0.15
-		}
-		picture = SOV_down_with_nep
-		name = rus_down_with_nep
-	}
-	rus_down_with_nep_1 = {
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_down_with_nep_1"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = -0.15
-			party_popularity_stability_factor = 0.10
-			social_democrat_drift = -0.04
-			global_building_slots_factor = 0.20
-			production_factory_efficiency_gain_factor = -0.07
-			line_change_production_efficiency_factor = -0.07
-			production_speed_industrial_complex_factor = 0.10
-			consumer_goods_factor = -0.15
-			local_resources_factor = 0.15
-			political_power_gain = -0.1
-		}
-		picture = SOV_down_with_nep
-		name = rus_down_with_nep
-	}
-	rus_down_with_nep_2 = {
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_down_with_nep_2"}
-		allowed = { always = no }
-		modifier = {
-			stability_factor = -0.15
-			party_popularity_stability_factor = 0.10
-			social_democrat_drift = -0.04
-			global_building_slots_factor = 0.20
-			industrial_capacity_factory = 0.10
-			production_factory_efficiency_gain_factor = -0.11
-			line_change_production_efficiency_factor = -0.11
-			production_speed_buildings_factor = 0.10
-			consumer_goods_factor = -0.15
-			local_resources_factor = 0.15
-			political_power_gain = -0.1
-		}
-		picture = SOV_down_with_nep
-		name = rus_down_with_nep
-	}
-	rus_down_with_nep_3 = {
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_down_with_nep_3"}
-		allowed = { always = no }
-		on_remove = {
-			add_ideas = rus_down_with_nep_4
-		}
-		modifier = {
-			stability_factor = -0.15
-			party_popularity_stability_factor = 0.10
-			social_democrat_drift = -0.04
-			global_building_slots_factor = 0.20
-			industrial_capacity_factory = 0.15
-			production_factory_start_efficiency_factor = 0.06
-			production_factory_efficiency_gain_factor = -0.16
-			line_change_production_efficiency_factor = -0.20
-			consumer_goods_factor = -0.15
-			production_speed_buildings_factor = 0.10
-			local_resources_factor = 0.15
-		}
-		picture = new_economic_policy
-		name = rus_down_with_nep
-	}
-	rus_down_with_nep_4 = {
-		on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_down_with_nep_4"}
-		allowed = { always = no }
-		modifier = {
-			global_building_slots_factor = 0.20
-			industrial_capacity_factory = 0.15
-			production_factory_start_efficiency_factor = 0.06
-			production_factory_efficiency_gain_factor = -0.16
-			line_change_production_efficiency_factor = -0.20
-			consumer_goods_factor = -0.15
-			production_speed_buildings_factor = 0.10
-			local_resources_factor = 0.15
-		}
-		picture = new_economic_policy
+		name = RUS_New_Economic_Policy
 	}
 	RUS_Russian_Nat_Synd = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_Russian_Nat_Synd"}
@@ -2055,6 +1506,232 @@ ideas = {
 		}
 		picture = generic_cold_war
 	}
+	RUS_jager_regiments = {
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_jager_regiments" }
+		picture = MEX_politicised_army
+		allowed = { always = no }
+		modifier = {
+			recon_factor = 0.1
+			org_loss_when_moving = -0.1
+		}
+	}
+	RUS_winter_warfare_training = { #initial
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_winter_warfare_training" }
+		picture = SOV_the_road_of_life
+		allowed = { always = no }
+		modifier = {
+			winter_attrition_factor = -0.15
+			acclimatization_cold_climate_gain_factor = 0.15
+			supply_combat_penalties_on_core_factor = -0.05
+		}
+	}	
+	RUS_improved_pilot_training_1 = { #initial
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_1" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.05
+			air_accidents_factor = -0.05
+			air_home_defence_factor = 0.05
+		}
+	}
+	RUS_improved_pilot_training_2 = { #amateur flying
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_2" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.05
+			air_accidents_factor = -0.05
+			air_home_defence_factor = 0.05
+
+			ace_effectiveness_factor = 0.05
+			air_mission_xp_gain_factor = 0.1
+			air_training_xp_gain_factor = 0.1
+		}
+	}
+	RUS_improved_pilot_training_3 = { #night witches
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_3" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.05
+			air_accidents_factor = -0.05
+			air_home_defence_factor = 0.05
+
+			air_night_penalty = -0.15
+			air_strategic_bomber_night_penalty = -0.1
+		}
+	}
+	RUS_improved_pilot_training_4 = { #aviation bureaus
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_3" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.15
+			air_accidents_factor = -0.15
+			air_home_defence_factor = 0.05
+		}
+	}
+	RUS_improved_pilot_training_5 = { #amateur flying + night witches
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_5" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.05
+			air_accidents_factor = -0.05
+			air_home_defence_factor = 0.05
+
+			ace_effectiveness_factor = 0.05
+			air_mission_xp_gain_factor = 0.1
+			air_training_xp_gain_factor = 0.1
+
+			air_night_penalty = -0.15
+			air_strategic_bomber_night_penalty = -0.1
+		}
+	}
+	RUS_improved_pilot_training_6 = { #amateur flying + aviation bureaus
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_6" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.15
+			air_accidents_factor = -0.15
+			air_home_defence_factor = 0.05
+
+			ace_effectiveness_factor = 0.05
+			air_mission_xp_gain_factor = 0.1
+			air_training_xp_gain_factor = 0.1
+		}
+	}
+	RUS_improved_pilot_training_7 = { #night witches + aviation bureaus
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_7" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.15
+			air_accidents_factor = -0.15
+			air_home_defence_factor = 0.05
+
+			air_night_penalty = -0.15
+			air_strategic_bomber_night_penalty = -0.1
+		}
+	}
+	RUS_improved_pilot_training_8 = { #amateur flying + night witches + aviation bureaus
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_improved_pilot_training_8" }
+		name = RUS_improved_pilot_training
+		picture = generic_aircraft_support
+		modifier = {
+			air_weather_penalty = -0.15
+			air_accidents_factor = -0.15
+			air_home_defence_factor = 0.05
+
+			ace_effectiveness_factor = 0.05
+			air_mission_xp_gain_factor = 0.1
+			air_training_xp_gain_factor = 0.1
+
+			air_night_penalty = -0.15
+			air_strategic_bomber_night_penalty = -0.1
+		}
+	}
+	RUS_aircraft_designs_1 = { #transpolar flights
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_1" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_range_factor = 0.05
+			air_agility_factor = 0.05
+			air_fuel_consumption_factor = -0.05
+		}
+	}
+	RUS_aircraft_designs_2 = { #ground support
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_2" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_cas_present_factor = 0.1
+		}
+	}
+	RUS_aircraft_designs_3 = { #tactical flexibility
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_3" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_superiority_bonus_in_combat = 0.1
+		}
+	}
+	RUS_aircraft_designs_4 = { #transpolar flights + ground support
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_4" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_range_factor = 0.05
+			air_agility_factor = 0.05
+			air_fuel_consumption_factor = -0.05
+
+			air_cas_present_factor = 0.1
+		}
+	}
+	RUS_aircraft_designs_5 = { #transpolar flights + tactical flexibility
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_5" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_range_factor = 0.05
+			air_agility_factor = 0.05
+			air_fuel_consumption_factor = -0.05
+
+			air_superiority_bonus_in_combat = 0.1
+		}
+	}
+	RUS_aircraft_designs_6 = { #ground support + death from above
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_6" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_cas_present_factor = 0.1
+
+			air_mission_efficiency = 0.1
+		}
+	}
+	RUS_aircraft_designs_7 = { #tactical flexibility + death from above
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_7" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_superiority_bonus_in_combat = 0.1
+
+			air_mission_efficiency = 0.1
+		}
+	}
+	RUS_aircraft_designs_8 = { #transpolar flights + ground support + death from above
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_8" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_cas_present_factor = 0.1
+
+			air_range_factor = 0.05
+			air_agility_factor = 0.05
+			air_fuel_consumption_factor = -0.05
+
+			air_mission_efficiency = 0.1
+		}
+	}
+	RUS_aircraft_designs_9 = { #transpolar flights + tactical flexibility + death from above
+		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_aircraft_designs_9" }
+		name = RUS_aircraft_designs
+		picture = generic_air_research
+		modifier = {
+			air_superiority_bonus_in_combat = 0.1
+
+			air_range_factor = 0.05
+			air_agility_factor = 0.05
+			air_fuel_consumption_factor = -0.05
+
+			air_mission_efficiency = 0.1
+		}
+	}
+
 	RUS_rearmament_programme_idea = {
 		on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_rearmament_programme_idea" }
 			allowed = { always = no }
@@ -2133,7 +1810,7 @@ ideas = {
 			modifier = {
 				conscription = 0.03
 			}
-			picture = FRA_national_mobilization_focus
+			picture = citizen_conscription_idea
 		}
 		training_barracks = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea training_barracks"}
@@ -4125,6 +3802,18 @@ ideas = {
 				army_org_factor = 0.05
 			}
 		}
+		RUS_new_red_army_2_lar = { #centralised command
+			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_new_red_army_2"}
+			allowed = { always = no }
+			name = RUS_new_red_army
+			picture = advisors_soviet
+			modifier = {
+				max_planning = 0.20
+				planning_speed = 0.20
+				army_org_factor = 0.05
+				local_intel_to_enemies = -0.1
+			}
+		}
 		RUS_new_red_army_3_lar = { #cheka
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_new_red_army_3_lar"}
 			allowed = { always = no }
@@ -4172,7 +3861,7 @@ ideas = {
 				planning_speed = 0.25
 				army_org_factor = 0.10
 				training_time_army_factor = -0.10
-				local_intel_to_enemies = -0.3
+				encryption = 1
 			}
 		}
 		RUS_revvoyensovet = {
@@ -4695,7 +4384,7 @@ ideas = {
 				stability_factor = 0.10
 				land_doctrine_cost_factor = -0.05
 			}
-			picture = army_cooperation
+			picture = IRE_populist_dictatorship_idea
 		}
 		rus_denikin_wrangel_idea = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea rus_denikin_wrangel_idea"}
@@ -4708,7 +4397,7 @@ ideas = {
 				stability_factor = 0.10
 				land_doctrine_cost_factor = -0.05
 			}
-			picture = army_cooperation
+			picture = IRE_populist_dictatorship_idea
 		}
 		RUS_rovs_balance = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_rovs_balance"}
@@ -5380,6 +5069,8 @@ ideas = {
 			modifier = {
 				political_power_cost = 0.15
 				research_speed_factor = -0.025
+				resistance_damage_to_garrison = -0.1
+				army_core_attack_factor = 0.1
 			}
 		}
 					
@@ -5926,7 +5617,6 @@ ideas = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_fair_labour"}
 			picture = worker_guarantees
 			allowed = { always = no }
-			available = { NOT = { has_idea = RUS_fair_labour } }
 			modifier = {
 				stability_factor = 0.04
 				political_power_gain = 0.075
@@ -5947,7 +5637,7 @@ ideas = {
 		RUS_agricultural_adjustment_act = {
 			on_add = { log = "[GetDateText]: [Root.GetName]: add idea RUS_agricultural_adjustment_act"}
 			allowed = { always = no }
-			picture = generic_agrarian_reform
+			picture = CAN_rural_subsidies
 			modifier = {
 				political_power_cost = 0.15
 				consumer_goods_factor = -0.175
@@ -6336,7 +6026,7 @@ ideas = {
 			picture = industrial_protectionism
 			allowed = { always = no }
 			modifier = {
-				trade_opinion_factor = -0.5
+				trade_opinion_factor = -1
 				defensive_war_stability_factor = 0.5
 				global_building_slots_factor = 0.1				
 				production_factory_start_efficiency_factor = 0.05
@@ -6353,7 +6043,7 @@ ideas = {
 			modifier = {
 				political_power_gain = 0.1
 				stability_weekly = 0.04
-				trade_opinion_factor = -0.5
+				trade_opinion_factor = -1
 				consumer_goods_factor = -0.16
 				defensive_war_stability_factor = 0.5
 				global_building_slots_factor = 0.1				
@@ -6373,7 +6063,7 @@ ideas = {
 				NOT = { has_idea = RUS_socialization_of_land }
 				NOT = { has_idea = RUS_national_agrarian_fund }
 				NOT = { has_idea = RUS_agricultural_adjustment_act }
-				NOT = { has_idea = rus_nep_1 }
+				NOT = { has_dynamic_modifier = { modifier = RUS_New_Economic_Policy_modifier } }
 			}
 			modifier = {
 				consumer_goods_factor = -0.15
@@ -6390,7 +6080,7 @@ ideas = {
 				NOT = { has_idea = RUS_socialization_of_land }
 				NOT = { has_idea = RUS_national_agrarian_fund }
 				NOT = { has_idea = RUS_agricultural_adjustment_act }
-				NOT = { has_idea = rus_nep_1 }
+				NOT = { has_dynamic_modifier = { modifier = RUS_New_Economic_Policy_modifier } }
 			}
 			modifier = {
 				consumer_goods_factor = -0.17
@@ -6407,7 +6097,7 @@ ideas = {
 				NOT = { has_idea = RUS_socialization_of_land }
 				NOT = { has_idea = RUS_national_agrarian_fund }
 				NOT = { has_idea = RUS_agricultural_adjustment_act }
-				NOT = { has_idea = rus_nep_1 }
+				NOT = { has_dynamic_modifier = { modifier = RUS_New_Economic_Policy_modifier } }
 			}
 			modifier = {
 				consumer_goods_factor = -0.17
@@ -6424,7 +6114,7 @@ ideas = {
 				NOT = { has_idea = RUS_socialization_of_land }
 				NOT = { has_idea = RUS_national_agrarian_fund }
 				NOT = { has_idea = RUS_agricultural_adjustment_act }
-				NOT = { has_idea = rus_nep_1 }
+				NOT = { has_dynamic_modifier = { modifier = RUS_New_Economic_Policy_modifier } }
 			}
 			modifier = {
 				consumer_goods_factor = -0.17
@@ -6442,7 +6132,7 @@ ideas = {
 				NOT = { has_idea = RUS_socialization_of_land }
 				NOT = { has_idea = RUS_national_agrarian_fund }
 				NOT = { has_idea = RUS_agricultural_adjustment_act }
-				NOT = { has_idea = rus_nep_1 }
+				NOT = { has_dynamic_modifier = { modifier = RUS_New_Economic_Policy_modifier } }
 			}
 			modifier = {
 				consumer_goods_factor = -0.17
@@ -6624,7 +6314,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			modifier = {
 				political_power_cost = 0.05
-				consumer_goods_factor = -0.3
+				consumer_goods_factor = -0.03
 				production_factory_max_efficiency_factor = 0.05
 				compliance_growth = -0.02
 				resistance_target = 0.02
