@@ -21307,6 +21307,38 @@ country_event = { #The Patriot Party
 		if = {
 			limit = {
 				has_country_leader = {
+					name = "Dwight D. Eisenhower"
+					ruling_only = yes
+				}
+			}
+			create_country_leader = {
+				name = "Dwight D. Eisenhower"
+				desc = "EISENHOWER_DESC"
+				picture = "gfx/leaders/USA/Portrait_USA_gen_Dwight_Eisenhower.png"
+				expire = "1.1.1"
+				ideology = authdem_junta_subtype
+				traits = { great_war_hero }
+			}
+			create_country_leader = {
+				name = "Dwight D. Eisenhower"
+				desc = "EISENHOWER_DESC"
+				picture = "gfx/leaders/USA/Portrait_USA_gen_Dwight_Eisenhower.png"
+				expire = "1.1.1"
+				ideology = junta_subtype
+				traits = { great_war_hero }
+			}
+			create_country_leader = {
+				name = "Dwight D. Eisenhower"
+				desc = "EISENHOWER_DESC"
+				picture = "gfx/leaders/USA/Portrait_USA_gen_Dwight_Eisenhower.png"
+				expire = "1.1.1"
+				ideology = militarism_subtype
+				traits = { great_war_hero }
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
 					name = "Omar Bradley"
 					ruling_only = yes
 				}
@@ -29341,13 +29373,15 @@ country_event = {# Denmark Declines
 
 	option = {#Declare War Now
 		name = ustates.671.a
-		declare_war_on = {
-		target = DEN
+		ai_chance = { factor = 0 }
+		create_wargoal = {
 		type = annex_everything
+		target = DEN
 		}
 	}
 	option = {#We will wait
 		name = ustates.671.b
+		ai_chance = { factor = 100 }
 		add_war_support = -0.02
 		add_political_power = -10
 		add_state_claim = 101
@@ -29508,6 +29542,13 @@ country_event = {#annexing more mexican lands
 	AND = {
 	tag = BBR
 	has_completed_focus = BBR_a_new_america
+	}
+	AND = {
+	tag = CSA
+	OR = {
+	has_government = social_democrat 
+	has_government = radical_socialist
+	}
 	}
 	}
 	OR = {
@@ -34893,6 +34934,10 @@ country_event = { # funny ptsd treatmnet
 		}
 		name = nimatron.13.a 
 		add_political_power = 50
+		set_country_flag = USA_mac_leads_triumvirate
+		set_country_flag = USA_triumvirate
+		set_country_flag = LEADER_GUI_VISIBLE
+		set_country_flag = DOUBLE_LEADER_GUI_VISIBLE
 	}
 	option = { 
 		name = nimatron.13.b
@@ -34904,6 +34949,10 @@ country_event = { # funny ptsd treatmnet
 			ideology = authdem_junta_subtype
 			traits = { great_war_hero }
 			}
+			set_country_flag = USA_ike_leads_triumvirate
+			set_country_flag = USA_triumvirate
+			set_country_flag = LEADER_GUI_VISIBLE
+			set_country_flag = DOUBLE_LEADER_GUI_VISIBLE
 		}
 	option = { 
 		name = nimatron.13.c 
@@ -34915,6 +34964,10 @@ country_event = { # funny ptsd treatmnet
 			ideology = authdem_junta_subtype
 			traits = { american_pompey }
 			}
+			set_country_flag = USA_bradley_leads_triumvirate
+			set_country_flag = USA_triumvirate
+			set_country_flag = LEADER_GUI_VISIBLE
+			set_country_flag = DOUBLE_LEADER_GUI_VISIBLE
 		}
 	}
 country_event = { # A Meeting in Derby Line

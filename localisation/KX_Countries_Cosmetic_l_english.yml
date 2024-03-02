@@ -1745,13 +1745,6 @@ MOR_GER_subject:0 "Morocco"
 MOR_GER_subject_ADJ:0 "Moroccan"
 MOR_GER_subject_DEF:0 "Morocco"
 
-CRE_GRE_subject:0 "Cretan State"
-CRE_GER_subject_ADJ:0 "Cretan"
-CRE_GRE_subject_DEF:0 "the Cretan State"
-CRE_OTT_subject:0 "Cretan Vilayet"
-CRE_OTT_subject_DEF:0 "the Cretan Vilayet"
-CRE_OTT_subject_ADJ:0 "Cretan"
-
 GHA_GER_subject:0 "Kingdom of Ashanti"
 GHA_GER_subject_ADJ:0 "Ashanti"
 GHA_GER_subject_DEF:0 "the Kingdom of Ashanti"
@@ -2563,13 +2556,13 @@ TXS_MEX_TEXACO_DEF:0 "the Texas Company"
 OTT_lost_war:0 "Turkish Provisional Government"
 OTT_lost_war_DEF:0 "the Turkish Provisional Government"
 
-RUS_TSAR_CLE_paternal_autocrat:0 "Realm of Holy Russia"
-RUS_TSAR_CLE_paternal_autocrat_ADJ:0 "Russian"
-RUS_TSAR_CLE_paternal_autocrat_DEF:0 "the Realm of Holy Russia"
-
-RUS_TSAR_CLE_2:0 "Realm of Holy Russia"
+RUS_TSAR_CLE:0 "Realm of Holy Russia"
 RUS_TSAR_CLE_ADJ:0 "Russian"
 RUS_TSAR_CLE_DEF:0 "the Realm of Holy Russia"
+
+RUS_TSAR_CLE_2:0 "Realm of Holy Russia"
+RUS_TSAR_CLE_2_ADJ:0 "Russian"
+RUS_TSAR_CLE_2_DEF:0 "the Realm of Holy Russia"
 
 RUS_DROZ_totalist:0 "Russian Empire"
 RUS_DROZ_totalist_ADJ:0 "Russian"
